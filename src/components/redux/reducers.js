@@ -15,28 +15,28 @@ const cartReducer = (state = [], action) => {
         return [...state, { ...action.payload, quantity: 1 }]
       }
 
-    case 'INCREASE_QUANTITY':
-      return state.map((product) =>
-        product.id === action.payload
-          ? { ...product, quantity: product.quantity + 1 }
-          : product,
-      )
-    case 'DECREASE_QUANTITY':
-      const updatedCart = state.map((product) =>
-        product.id === action.payload
-          ? { ...product, quantity: product.quantity - 1 }
-          : product,
-      )
+    // case 'INCREASE_QUANTITY':
+    //   return state.map((product) =>
+    //     product.id === action.payload
+    //       ? { ...product, quantity: product.quantity + 1 }
+    //       : product,
+    //   )
+    // case 'DECREASE_QUANTITY':
+    //   const updatedCart = state.map((product) =>
+    //     product.id === action.payload
+    //       ? { ...product, quantity: product.quantity - 1 }
+    //       : product,
+    //   )
 
-      const filteredCart = updatedCart.filter((product) => product.quantity > 0)
+    //   const filteredCart = updatedCart.filter((product) => product.quantity > 0)
 
-      return filteredCart
-    case 'REMOVE_PRODUCT':
-      const updatedCartRemove = state.filter(
-        (product) => product.id !== action.payload,
-      )
+    //   return filteredCart
+    // case 'REMOVE_PRODUCT':
+    //   const updatedCartRemove = state.filter(
+    //     (product) => product.id !== action.payload,
+    //   )
 
-      return updatedCartRemove
+    //   return updatedCartRemove
 
     default:
       return state

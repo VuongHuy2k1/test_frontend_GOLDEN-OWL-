@@ -8,10 +8,10 @@ const cx = classNames.bind(styles)
 function CartPage() {
   const [cartData, setCartData] = useState([])
   const cart = useSelector((state) => state)
-  const savedCart = localStorage.getItem('shoppingCart')
+
   useEffect(() => {
     setCartData(cart)
-  }, [savedCart])
+  }, [cart])
   const Card = cartData.map((item, index) => {
     return <CartProductComponent data={item} key={index} />
   })
