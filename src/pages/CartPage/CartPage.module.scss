@@ -37,3 +37,29 @@
  .products::-webkit-scrollbar-track {
     background-color: #f1f1f1; /* Màu của phần track thanh cuộn */
   }
+  .noti{
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  @media only screen and (max-width: 767px) {
+    
+ 
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        justify-content: space-between;
+        height: 100%;
+       
+       
+    }
+
+    .products{
+        height: 76vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        margin-bottom: 1rem;
+    }
+}

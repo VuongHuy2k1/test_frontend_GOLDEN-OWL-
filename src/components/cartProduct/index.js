@@ -12,16 +12,13 @@ const CartProductComponent = ({ data }) => {
   const dispatch = useDispatch()
   const handleIncreaseQuantity = (productId) => {
     dispatch({ type: 'INCREASE_QUANTITY', payload: productId })
-    localStorage.setItem('shoppingCart', JSON.stringify(cart))
   }
   const handleDecreaseQuantity = (productId) => {
     dispatch({ type: 'DECREASE_QUANTITY', payload: productId })
-    localStorage.setItem('shoppingCart', JSON.stringify(cart))
   }
 
   const handleRemoveProduct = (productId) => {
     dispatch({ type: 'REMOVE_PRODUCT', payload: productId })
-    localStorage.setItem('shoppingCart', JSON.stringify(cart))
   }
   return (
     <div className={cx('wrapper')}>

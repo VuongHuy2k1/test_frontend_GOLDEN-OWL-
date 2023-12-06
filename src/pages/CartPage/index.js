@@ -24,7 +24,13 @@ function CartPage() {
       <div className={cx('content')}>
         <p>Your cart</p>
       </div>
-      <div className={cx('products')}>{Card}</div>
+      <div className={cx('products')}>
+        {cartData.length <= 0 ? (
+          <div className={cx('noti')}>Your cart is empty</div>
+        ) : (
+          <>{Card}</>
+        )}
+      </div>
     </div>
   )
 }
