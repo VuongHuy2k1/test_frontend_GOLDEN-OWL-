@@ -1,0 +1,65 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    border-radius: 28px;
+    padding: 12px 28px;
+    margin-bottom: 80px;
+
+}
+.imager{
+    width: 100%;
+    justify-content: center;
+    border-radius:28px ;
+    img{
+    width:100%;
+    height: auto;
+    border-radius:28px ;
+   }
+}
+.name{
+   font-weight: 700;  
+   font-family: 'Rubick';
+   justify-content: space-between;
+   font-size: 1.4rem;
+   padding: 1.4rem 0 1.6rem 0;
+}
+.description{
+    font-weight: 400;  
+    padding-bottom: 1.4rem;
+}
+.price-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.price{
+    font-weight: 700;  
+}
+.btn{
+    border: none;
+  height: 2rem;
+    font-weight:900;
+    img{
+        width: 1rem;
+        height: 1rem;
+    }
+    background-color: #F6C90E;
+    p{
+        color:  #303841;
+        font-size: 0.7rem;
+        font-weight: 800;
+        margin: 0;
+        padding: 0.4rem 0.4rem;
+    }
+   transition: 1s;
+}
+.long{  border-radius: 28px;}
+.round{  
+    border-radius: 100% ;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
