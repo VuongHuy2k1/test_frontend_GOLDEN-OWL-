@@ -4,13 +4,31 @@
     height: 70vh;
     background-color: #FFF;
     border-radius: 28px;
+    position: relative;
+    overflow-y: scroll;
 }
+.wrapper::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-color: #F6C90E;
+    top: -20%;
+    left: -50%;
+    z-index: 0;
+  }
+.wrapper::-webkit-scrollbar {
+    display: none;
+  }
 .logo{
     padding: 12px 28px;
     img{
         width: 3rem;
         height: auto;
     }
+    position: relative;
 }
 .content{
     font-weight: 700;
@@ -22,11 +40,13 @@
         margin: 0;
         font-family: "Rubik", sans-serif;
     }
+    position: relative;
 }
 .products{
     height: 56vh;
     overflow-y: scroll;
     overflow-x: hidden;
+    position: relative;
 }
 
 .products::-webkit-scrollbar {
