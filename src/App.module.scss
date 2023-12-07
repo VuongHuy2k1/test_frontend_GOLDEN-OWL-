@@ -17,17 +17,9 @@
         transform: translateX(-50%) skewY(-8deg);
         background-color: #F6C90E;
         z-index: -1;
-        animation: wave 8s ease-in-out infinite alternate;
+        
       }
-      @keyframes wave {
-        0% {
-          transform: translateX(-50%) skew(0deg, -8deg);
-        }
-    
-        100% {
-          transform: translateX(-30%) skew(8deg, -4deg);
-        }
-      }
+  
 }
 
 .products{

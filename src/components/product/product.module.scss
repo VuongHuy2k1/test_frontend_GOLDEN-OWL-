@@ -24,10 +24,12 @@
    justify-content: space-between;
    font-size: 1.4rem;
    padding: 1.4rem 0 1.6rem 0;
+   font-family: "Rubik", sans-serif;
 }
 .description{
     font-weight: 400;  
     padding-bottom: 1.4rem;
+    font-family: "Rubik", sans-serif;
 }
 .price-container{
     display: flex;
@@ -37,6 +39,7 @@
 }
 .price{
     font-weight: 700;  
+    font-family: "Rubik", sans-serif;
 }
 .btn{
     border: none;
@@ -56,6 +59,7 @@
         font-weight: 800;
         margin: 0;
         padding: 0.4rem 0.4rem;
+        font-family: "Rubik", sans-serif;
     }
     :hover {
         opacity: 0.9;

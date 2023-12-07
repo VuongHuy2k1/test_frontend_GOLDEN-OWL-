@@ -19,13 +19,13 @@ const ProductComponent = ({ data }) => {
   }, [cart])
 
   useEffect(() => {
-    for (let i = 0; i < cart.length; i++) {
-      if (cart[i].id === data.id) {
+    for (let i = 0; i < cartData.length; i++) {
+      if (cartData[i].id === data.id) {
         setAddCart(false)
         break
       } else setAddCart(true)
     }
-  }, [cart, data.id])
+  }, [cartData, data.id])
 
   const clickBuy = () => {
     dispatch(

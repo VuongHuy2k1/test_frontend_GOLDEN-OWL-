@@ -39,6 +39,7 @@
     flex-direction: column;
     width: -webkit-fill-available;
     transition: all 2s;
+    overflow: hidden;
 }
 .name{
     font-weight: 700;  
@@ -47,11 +48,13 @@
     font-size: 1rem;
    
     transition-delay: 0.7s;
+    font-family: "Rubik", sans-serif;
  }
  .price{
     font-weight: 700;  
     margin: 0.6rem 0;
     transition-delay: 0.85s;
+    font-family: "Rubik", sans-serif;
 }
 
 .cart-btn{
@@ -72,6 +75,7 @@
    margin: 0;
    transition: opacity 0.4s;
    transition-delay: 1s;
+   font-family: "Rubik", sans-serif;
 }
 .btn{
     width: 28px;
