@@ -38,19 +38,12 @@
     background-color: #f1f1f1; /* Màu của phần track thanh cuộn */
   }
   @media only screen and (max-width: 767px) {
-    
- 
         .wrapper{
             display: flex;
             flex-direction: column;
-            // justify-content: center;
-            // align-items: center;
             justify-content: space-between;
             height: 100%;
-            padding:0.2rem 0;
-           
         }
-
         .products{
             height: 76vh;
             overflow-y: scroll;

@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind'
 import styles from './CartPage.module.scss'
-import { useState, useEffect, useM } from 'react'
+import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import CartProductComponent from '../../components/cartProduct'
 const cx = classNames.bind(styles)
@@ -12,10 +12,10 @@ function CartPage() {
   useEffect(() => {
     setCartData(cart)
   }, [cart])
-  const Card = cartData.map((item, index) => {
+  const Card = cart.map((item, index) => {
     return <CartProductComponent data={item} key={index} />
   })
-
+  console.log(cartData)
   return (
     <div className={cx('wrapper')}>
       <div className={cx('logo')}>

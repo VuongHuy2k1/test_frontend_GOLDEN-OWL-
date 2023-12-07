@@ -1,25 +1,17 @@
 import classNames from 'classnames/bind'
 import styles from './cartProduct.module.scss'
-import { useSelector, useDispatch } from 'react-redux'
-
-import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import {
+  removeProduct,
+  decreaseQuantity,
+  increaseQuantity,
+} from '../redux/action'
 const cx = classNames.bind(styles)
 const CartProductComponent = ({ data }) => {
   const myStyles = {
     backgroundColor: `${data.color}`,
   }
-  const cart = useSelector((state) => state)
   const dispatch = useDispatch()
-  const handleIncreaseQuantity = (productId) => {
-    dispatch({ type: 'INCREASE_QUANTITY', payload: productId })
-  }
-  const handleDecreaseQuantity = (productId) => {
-    dispatch({ type: 'DECREASE_QUANTITY', payload: productId })
-  }
-
-  const handleRemoveProduct = (productId) => {
-    dispatch({ type: 'REMOVE_PRODUCT', payload: productId })
-  }
   return (
     <div className={cx('wrapper')}>
       <div className={cx('imager')} style={myStyles}>
@@ -32,7 +24,7 @@ const CartProductComponent = ({ data }) => {
           <div className={cx('cart-btn-num')}>
             <button
               className={cx('btn', 'gray')}
-              onClick={handleDecreaseQuantity(data.id)}
+              onClick={() => dispatch(decreaseQuantity(data.id))}
             >
               <img src="minus.png" alt=""></img>
             </button>
@@ -40,7 +32,7 @@ const CartProductComponent = ({ data }) => {
             <p className={cx('num')}>{data.quantity}</p>
             <button
               className={cx('btn', 'gray')}
-              onClick={handleIncreaseQuantity(data.id)}
+              onClick={() => dispatch(increaseQuantity(data.id))}
             >
               <img src="/plus.png" alt=""></img>
             </button>
@@ -48,7 +40,7 @@ const CartProductComponent = ({ data }) => {
           <div className={cx('cart-btn-dele')}>
             <button
               className={cx('btn', 'yellow')}
-              onClick={handleRemoveProduct(data.id)}
+              onClick={() => dispatch(removeProduct(data.id))}
             >
               <img src="/trash.png" alt=""></img>
             </button>

@@ -2,14 +2,15 @@ import classNames from 'classnames/bind'
 import styles from './product.module.scss'
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-
+import { addToCart } from '../redux/action'
 const cx = classNames.bind(styles)
 const ProductComponent = ({ data }) => {
   const myStyles = {
     backgroundColor: `${data.color}`,
   }
-
+  const dispatch = useDispatch()
   const [addCart, setAddCart] = useState(true)
+
   const [cartData, setCartData] = useState([])
   const cart = useSelector((state) => state)
 
@@ -26,22 +27,17 @@ const ProductComponent = ({ data }) => {
     }
   }, [cart])
 
-  const dispatch = useDispatch()
-
-  const clickBuy = (data) => {
-    dispatch({
-      type: 'ADD_TO_CART',
-      payload: {
+  const clickBuy = () => {
+    dispatch(
+      addToCart({
         id: data.id,
         image: data.image,
         name: data.name,
         price: data.price,
         quantity: 1,
-      },
-    })
-    localStorage.setItem('shoppingCart', JSON.stringify(cart))
+      }),
+    )
   }
-
   return (
     <div className={cx('wrapper')}>
       <div className={cx('imager')} style={myStyles}>
@@ -52,7 +48,7 @@ const ProductComponent = ({ data }) => {
       <div className={cx('price-container')}>
         <div className={cx('price')}> ${data.price}</div>
         {addCart ? (
-          <button className={cx('btn', 'long')} onClick={() => clickBuy(data)}>
+          <button className={cx('btn', 'long')} onClick={clickBuy}>
             <p>ADD TO CARD</p>
           </button>
         ) : (
