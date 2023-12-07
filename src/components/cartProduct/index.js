@@ -5,7 +5,7 @@ import {
   removeProduct,
   decreaseQuantity,
   increaseQuantity,
-} from '../redux/action'
+} from '../../redux/action'
 const cx = classNames.bind(styles)
 const CartProductComponent = ({ data }) => {
   const myStyles = {

@@ -5,7 +5,31 @@
     align-items: center;
     overflow: hidden;
     height: 100vh;
+    &::before {
+        content: "";
+        display: block;
+        position: fixed;
+        width: 300%;
+        height: 100%;
+        top: 70%;
+        left: 50%;
+        border-radius: 100%;
+        transform: translateX(-50%) skewY(-8deg);
+        background-color: #F6C90E;
+        z-index: -1;
+        animation: wave 8s ease-in-out infinite alternate;
+      }
+      @keyframes wave {
+        0% {
+          transform: translateX(-50%) skew(0deg, -8deg);
+        }
+    
+        100% {
+          transform: translateX(-30%) skew(8deg, -4deg);
+        }
+      }
 }
+
 .products{
     width: 20%;
     height: 70vh;

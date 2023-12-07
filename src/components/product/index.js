@@ -2,7 +2,7 @@ import classNames from 'classnames/bind'
 import styles from './product.module.scss'
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { addToCart } from '../redux/action'
+import { addToCart } from '../../redux/action'
 const cx = classNames.bind(styles)
 const ProductComponent = ({ data }) => {
   const myStyles = {
@@ -23,9 +23,9 @@ const ProductComponent = ({ data }) => {
       if (cart[i].id === data.id) {
         setAddCart(false)
         break
-      }
+      } else setAddCart(true)
     }
-  }, [cart])
+  }, [cart, data.id])
 
   const clickBuy = () => {
     dispatch(
@@ -34,6 +34,7 @@ const ProductComponent = ({ data }) => {
         image: data.image,
         name: data.name,
         price: data.price,
+        color: data.color,
         quantity: 1,
       }),
     )
